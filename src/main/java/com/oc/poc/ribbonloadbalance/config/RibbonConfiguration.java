@@ -9,7 +9,7 @@ import com.netflix.loadbalancer.WeightedResponseTimeRule;
 import io.fabric8.spring.cloud.kubernetes.ribbon.KubernetesServerList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+
 
 /**
  * Created by pchaivong on 11/3/2017 AD.
@@ -36,7 +36,6 @@ public class RibbonConfiguration {
     @Bean
     public IClientConfig clientConfig(){
         return IClientConfig.Builder.newBuilder()
-                .withDefaultValues()
                 .withLoadBalancerEnabled(true)
                 .withServerListRefreshIntervalMills(1000)
                 .build()
