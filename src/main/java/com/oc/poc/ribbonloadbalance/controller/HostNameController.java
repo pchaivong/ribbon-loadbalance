@@ -1,12 +1,14 @@
 package com.oc.poc.ribbonloadbalance.controller;
 
+import com.netflix.client.config.IClientConfig;
 import com.oc.poc.ribbonloadbalance.dto.DelayedRequest;
 import com.oc.poc.ribbonloadbalance.dto.DelayedResponse;
 import com.oc.poc.ribbonloadbalance.dto.HostnameResponse;
 import com.oc.poc.ribbonloadbalance.service.HostNameService;
 import com.oc.poc.ribbonloadbalance.service.HostnameDelayedResponse;
 import com.oc.poc.ribbonloadbalance.service.HostnameServiceResponse;
-import com.oc.poc.ribbonloadbalance.service.HostnameSetDelayedRequest;
+
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,7 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Slf4j
 public class HostNameController {
-
 
     private final HostNameService hostNameService;
 
@@ -40,6 +41,7 @@ public class HostNameController {
         response.setElapsedTime(elapsed);
 
         log.info("Get hostname elapsed time: " + elapsed);
+
 
         return response;
     }

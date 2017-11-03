@@ -18,6 +18,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RibbonConfiguration {
 
+    private static final String NAME = "simple-hostname";
+
+
     @Autowired
     private IClientConfig ribbonClientConfig;
 
@@ -35,6 +38,8 @@ public class RibbonConfiguration {
     public IClientConfig clientConfig(){
         return IClientConfig.Builder.newBuilder()
                 .withDefaultValues()
+                .withLoadBalancerEnabled(true)
+                .withServerListRefreshIntervalMills(1000)
                 .build()
                 .set(IClientConfigKey.Keys.NIWSServerListClassName, KubernetesServerList.class.getName());
     }
