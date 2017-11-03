@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
  * Created by pchaivong on 11/3/2017 AD.
  */
 
+@Configuration
 public class RibbonConfiguration {
 
     @Autowired
