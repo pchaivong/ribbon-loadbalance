@@ -7,6 +7,7 @@ import com.oc.poc.ribbonloadbalance.service.HostNameService;
 import com.oc.poc.ribbonloadbalance.service.HostnameDelayedResponse;
 import com.oc.poc.ribbonloadbalance.service.HostnameServiceResponse;
 import com.oc.poc.ribbonloadbalance.service.HostnameSetDelayedRequest;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
+@Slf4j
 public class HostNameController {
 
 
@@ -36,6 +38,8 @@ public class HostNameController {
         HostnameResponse response = new HostnameResponse();
         response.setHostname(resp.getHostname());
         response.setElapsedTime(elapsed);
+
+        log.info("Get hostname elapsed time: " + elapsed);
 
         return response;
     }
