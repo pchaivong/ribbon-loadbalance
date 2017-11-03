@@ -37,7 +37,6 @@ public class RibbonConfiguration {
     public IClientConfig clientConfig(){
         return IClientConfig.Builder.newBuilder()
                 .withDefaultValues()
-                .withServerListRefreshIntervalMills(1000)
                 .build()
                 .set(IClientConfigKey.Keys.NIWSServerListClassName, KubernetesServerList.class.getName());
     }
