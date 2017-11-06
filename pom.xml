@@ -51,6 +51,14 @@
 			<version>3.0.0</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/io.fabric8.kubeflix/ribbon-discovery -->
+		<dependency>
+			<groupId>io.fabric8.kubeflix</groupId>
+			<artifactId>ribbon-discovery</artifactId>
+			<version>1.0.28</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>io.fabric8</groupId>
 			<artifactId>spring-cloud-starter-kubernetes-netflix</artifactId>

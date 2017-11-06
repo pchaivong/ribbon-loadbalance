@@ -3,7 +3,7 @@ package com.oc.poc.ribbonloadbalance.config;
 import com.netflix.client.config.IClientConfig;
 import com.netflix.client.config.IClientConfigKey;
 import com.netflix.loadbalancer.*;
-import io.fabric8.spring.cloud.kubernetes.ribbon.KubernetesServerList;
+import io.fabric8.kubeflix.ribbon.KubernetesServerList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 
