@@ -2,10 +2,7 @@ package com.oc.poc.ribbonloadbalance.config;
 
 import com.netflix.client.config.IClientConfig;
 import com.netflix.client.config.IClientConfigKey;
-import com.netflix.loadbalancer.IPing;
-import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.PingUrl;
-import com.netflix.loadbalancer.WeightedResponseTimeRule;
+import com.netflix.loadbalancer.*;
 import io.fabric8.spring.cloud.kubernetes.ribbon.KubernetesServerList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -30,7 +27,7 @@ public class RibbonConfiguration {
 
     @Bean
     public IRule ribbonRule(IClientConfig config){
-        return new WeightedResponseTimeRule();
+        return new AvailabilityFilteringRule();
     }
 
     @Bean
