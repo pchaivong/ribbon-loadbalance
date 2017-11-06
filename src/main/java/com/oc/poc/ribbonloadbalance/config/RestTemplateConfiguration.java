@@ -11,7 +11,6 @@ import org.springframework.web.client.RestTemplate;
  */
 
 @Configuration
-@RibbonClient(name ="simple-hostname", configuration = RibbonConfiguration.class)
 public class RestTemplateConfiguration {
 
     @Bean
